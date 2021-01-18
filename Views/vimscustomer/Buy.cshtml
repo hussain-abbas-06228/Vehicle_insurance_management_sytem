@@ -1,0 +1,315 @@
+﻿@model vimseproject.Models.customer_policy_records
+
+@{
+    ViewBag.Title = "Buy";
+}
+
+
+
+<style>
+    .navbaricon1 {
+        margin-top: -15px;
+        height: 54px;
+        width: 169px;
+    }
+
+    .nav {
+    }
+
+    .navcontents {
+        margin-right: 30px;
+        margin-left: 30px;
+        font-family: 'Josefin Slab', serif;
+        font-size: 25px;
+    }
+
+
+
+
+
+
+    .portfolioimgs {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+
+
+    .imgcolumn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+
+
+    #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 20px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: grey; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
+    }
+
+        #myBtn:hover {
+            background-color: #555; /* Add a dark-grey background on hover */
+        }
+
+
+
+    .abouttext {
+        margin-right: 30px;
+        margin-left: 30px;
+        font-family: 'Josefin Slab', serif;
+        font-size: 30px;
+    }
+
+
+    .mypicture {
+        width: 1000px;
+    }
+
+    .mypiccaption {
+        font-size: 20px;
+        color: blue;
+        text-align: right;
+    }
+
+    .contactpageheader {
+        font-family: 'Josefin Slab', serif;
+        font-size: 55px;
+    }
+
+    .contactpage {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .contactpagetext {
+        font-family: 'Josefin Slab', serif;
+        font-size: 30px;
+    }
+
+
+    .abouthead {
+        font-size: 40px;
+    }
+
+    .about-text {
+        font-size: 35px;
+    }
+
+    .about-text1 {
+        font-size: 35px;
+        text-decoration-style: bold;
+    }
+</style>
+
+
+<script>
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+</script>
+
+
+
+<nav class="navbar navbar-default navv">
+    <div class="navcontents">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "vimscustomer")"><img class="navbaricon1" src="~/logo.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="@Url.Action("Testimonials", "vimscustomer")">Testimonials</a></li>
+                    <li><a href="@Url.Action("Index", "vimscustomer")">About</a></li>
+                    <li><a href="@Url.Action("typesofinsurance", "vimscustomer")">Types of Insurance</a></li>
+                    <li class="active"><a href="@Url.Action("ChangePassword", "vimscustomer")"><span class="glyphicon glyphicon-user"></span></a></li>
+                    </i></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<br>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<h2>Buy</h2>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>customer_policy_records</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer_ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer_ID)
+                @Html.ValidationMessageFor(model => model.Customer_ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer_Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer_Name)
+                @Html.ValidationMessageFor(model => model.Customer_Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer_Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer_Address)
+                @Html.ValidationMessageFor(model => model.Customer_Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer_Phone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer_Phone)
+                @Html.ValidationMessageFor(model => model.Customer_Phone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Policy_ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Policy_ID)
+                @Html.ValidationMessageFor(model => model.Policy_ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Policy_Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Policy_Date)
+                @Html.ValidationMessageFor(model => model.Policy_Date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Policy_duration, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Policy_duration)
+                @Html.ValidationMessageFor(model => model.Policy_duration)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_ID)
+                @Html.ValidationMessageFor(model => model.Vehicle_ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Name)
+                @Html.ValidationMessageFor(model => model.Vehicle_Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Model, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Model)
+                @Html.ValidationMessageFor(model => model.Vehicle_Model)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Version, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Version)
+                @Html.ValidationMessageFor(model => model.Vehicle_Version)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Rate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Rate)
+                @Html.ValidationMessageFor(model => model.Vehicle_Rate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Warranty, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Warranty)
+                @Html.ValidationMessageFor(model => model.Vehicle_Warranty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Body_Number, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Body_Number)
+                @Html.ValidationMessageFor(model => model.Vehicle_Body_Number)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vehicle_Engine_Number, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Vehicle_Engine_Number)
+                @Html.ValidationMessageFor(model => model.Vehicle_Engine_Number)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Customer_Add_Prove, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Customer_Add_Prove)
+                @Html.ValidationMessageFor(model => model.Customer_Add_Prove)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
