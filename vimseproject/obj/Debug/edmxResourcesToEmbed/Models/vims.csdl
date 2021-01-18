@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vimsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="billinginfo">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_ID" Type="Int32" />
+    <Property Name="Customer_Add_Prove" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Phone" Type="Int32" />
+    <Property Name="Bill_ID" Type="Int32" />
+    <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Rate" Type="Int32" />
+    <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="claim_datails">
+    <Key>
+      <PropertyRef Name="Claim_ID" />
+    </Key>
+    <Property Name="Claim_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Policy_ID" Type="Int32" />
+    <Property Name="Policy_Start_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_End_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Place_Of_Accident" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Of_Accident" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Insured_Amount" Type="Int32" />
+    <Property Name="Claimable_Amount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="company_expenses">
+    <Key>
+      <PropertyRef Name="Expence_ID" />
+    </Key>
+    <Property Name="Expence_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Type_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Amount_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="customer_policy_records">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Phone" Type="Int32" />
+    <Property Name="Policy_ID" Type="Int32" />
+    <Property Name="Policy_Date" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="Policy_duration" Type="Int32" />
+    <Property Name="Vehicle_ID" Type="Int32" />
+    <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Rate" Type="Int32" />
+    <Property Name="Vehicle_Warranty" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Add_Prove" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="customerinfo">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Phone" Type="Int32" />
+  </EntityType>
+  <EntityType Name="estimate">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Estimate_Number" Type="Int32" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Phone" Type="Int32" />
+    <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Rate" Type="Int32" />
+    <Property Name="Vehicle_Waranty" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Policy_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="userpassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vehicleinfo">
+    <Key>
+      <PropertyRef Name="Vehicle_ID" />
+    </Key>
+    <Property Name="Vehicle_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicles_Owner_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Rate" Type="Int32" />
+    <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Vehicle_Number" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="vimsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="billinginfoes" EntityType="Self.billinginfo" />
+    <EntitySet Name="claim_datails" EntityType="Self.claim_datails" />
+    <EntitySet Name="company_expenses" EntityType="Self.company_expenses" />
+    <EntitySet Name="customer_policy_records" EntityType="Self.customer_policy_records" />
+    <EntitySet Name="customerinfoes" EntityType="Self.customerinfo" />
+    <EntitySet Name="estimates" EntityType="Self.estimate" />
+    <EntitySet Name="userinfoes" EntityType="Self.userinfo" />
+    <EntitySet Name="vehicleinfoes" EntityType="Self.vehicleinfo" />
+  </EntityContainer>
+</Schema>

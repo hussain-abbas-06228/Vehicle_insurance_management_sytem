@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vimsModelStoreContainer" CdmEntityContainer="vimsEntities">
+    <EntitySetMapping Name="billinginfoes">
+      <EntityTypeMapping TypeName="vimsModel.billinginfo">
+        <MappingFragment StoreEntitySet="billinginfo">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+          <ScalarProperty Name="Customer_Add_Prove" ColumnName="Customer_Add_Prove" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+          <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+          <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+          <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+          <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+          <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="claim_datails">
+      <EntityTypeMapping TypeName="vimsModel.claim_datails">
+        <MappingFragment StoreEntitySet="claim_datails">
+          <ScalarProperty Name="Claim_ID" ColumnName="Claim_ID" />
+          <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+          <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+          <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Place_Of_Accident" ColumnName="Place_Of_Accident" />
+          <ScalarProperty Name="Date_Of_Accident" ColumnName="Date_Of_Accident" />
+          <ScalarProperty Name="Insured_Amount" ColumnName="Insured_Amount" />
+          <ScalarProperty Name="Claimable_Amount" ColumnName="Claimable_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_expenses">
+      <EntityTypeMapping TypeName="vimsModel.company_expenses">
+        <MappingFragment StoreEntitySet="company_expenses">
+          <ScalarProperty Name="Expence_ID" ColumnName="Expence_ID" />
+          <ScalarProperty Name="Date_of_Expence" ColumnName="Date_of_Expence" />
+          <ScalarProperty Name="Type_of_Expence" ColumnName="Type_of_Expence" />
+          <ScalarProperty Name="Amount_of_Expence" ColumnName="Amount_of_Expence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_policy_records">
+      <EntityTypeMapping TypeName="vimsModel.customer_policy_records">
+        <MappingFragment StoreEntitySet="customer_policy_records">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+          <ScalarProperty Name="Policy_Date" ColumnName="Policy_Date" />
+          <ScalarProperty Name="Policy_duration" ColumnName="Policy_duration" />
+          <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+          <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+          <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+          <ScalarProperty Name="Vehicle_Version" ColumnName="Vehicle_Version" />
+          <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+          <ScalarProperty Name="Vehicle_Warranty" ColumnName="Vehicle_Warranty" />
+          <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+          <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+          <ScalarProperty Name="Customer_Add_Prove" ColumnName="Customer_Add_Prove" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerinfoes">
+      <EntityTypeMapping TypeName="vimsModel.customerinfo">
+        <MappingFragment StoreEntitySet="customerinfo">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimates">
+      <EntityTypeMapping TypeName="vimsModel.estimate">
+        <MappingFragment StoreEntitySet="estimate">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Estimate_Number" ColumnName="Estimate_Number" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+          <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+          <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+          <ScalarProperty Name="Vehicle_Waranty" ColumnName="Vehicle_Waranty" />
+          <ScalarProperty Name="Vehicle_Policy_type" ColumnName="Vehicle_Policy_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userinfoes">
+      <EntityTypeMapping TypeName="vimsModel.userinfo">
+        <MappingFragment StoreEntitySet="userinfo">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehicleinfoes">
+      <EntityTypeMapping TypeName="vimsModel.vehicleinfo">
+        <MappingFragment StoreEntitySet="vehicleinfo">
+          <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+          <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+          <ScalarProperty Name="Vehicles_Owner_Address" ColumnName="Vehicles_Owner_Address" />
+          <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+          <ScalarProperty Name="Vehicle_Version" ColumnName="Vehicle_Version" />
+          <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+          <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+          <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+          <ScalarProperty Name="Vehicle_Number" ColumnName="Vehicle_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

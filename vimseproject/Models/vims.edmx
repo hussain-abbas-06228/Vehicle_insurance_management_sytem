@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="vimsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="billinginfo">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Policy_ID" Type="int" />
+          <Property Name="Customer_Add_Prove" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Phone" Type="int" />
+          <Property Name="Bill_ID" Type="int" />
+          <Property Name="Vehicle_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Model" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Rate" Type="int" />
+          <Property Name="Vehicle_Body_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Engine_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Date" Type="varchar" MaxLength="255" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="claim_datails">
+          <Key>
+            <PropertyRef Name="Claim_ID" />
+          </Key>
+          <Property Name="Claim_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Policy_ID" Type="int" />
+          <Property Name="Policy_Start_Date" Type="varchar" MaxLength="255" />
+          <Property Name="Policy_End_Date" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Place_Of_Accident" Type="varchar" MaxLength="255" />
+          <Property Name="Date_Of_Accident" Type="varchar" MaxLength="255" />
+          <Property Name="Insured_Amount" Type="int" />
+          <Property Name="Claimable_Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="company_expenses">
+          <Key>
+            <PropertyRef Name="Expence_ID" />
+          </Key>
+          <Property Name="Expence_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date_of_Expence" Type="varchar" MaxLength="255" />
+          <Property Name="Type_of_Expence" Type="varchar" MaxLength="255" />
+          <Property Name="Amount_of_Expence" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="customer_policy_records">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Address" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Phone" Type="int" />
+          <Property Name="Policy_ID" Type="int" />
+          <Property Name="Policy_Date" Type="varchar" MaxLength="225" />
+          <Property Name="Policy_duration" Type="int" />
+          <Property Name="Vehicle_ID" Type="int" />
+          <Property Name="Vehicle_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Model" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Version" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Rate" Type="int" />
+          <Property Name="Vehicle_Warranty" Type="varchar" MaxLength="225" />
+          <Property Name="Vehicle_Body_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Engine_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Add_Prove" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="customerinfo">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Address" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Phone" Type="int" />
+        </EntityType>
+        <EntityType Name="estimate">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Estimate_Number" Type="int" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Customer_Phone" Type="int" />
+          <Property Name="Vehicle_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Model" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Rate" Type="int" />
+          <Property Name="Vehicle_Waranty" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Policy_type" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="255" />
+          <Property Name="userpassword" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="vehicleinfo">
+          <Key>
+            <PropertyRef Name="Vehicle_ID" />
+          </Key>
+          <Property Name="Vehicle_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicles_Owner_Address" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Model" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Version" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Rate" Type="int" />
+          <Property Name="Vehicle_Body_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Engine_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Vehicle_Number" Type="int" />
+        </EntityType>
+        <EntityContainer Name="vimsModelStoreContainer">
+          <EntitySet Name="billinginfo" EntityType="Self.billinginfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="claim_datails" EntityType="Self.claim_datails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="company_expenses" EntityType="Self.company_expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer_policy_records" EntityType="Self.customer_policy_records" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customerinfo" EntityType="Self.customerinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estimate" EntityType="Self.estimate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userinfo" EntityType="Self.userinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicleinfo" EntityType="Self.vehicleinfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vimsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="billinginfo">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Policy_ID" Type="Int32" />
+          <Property Name="Customer_Add_Prove" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Phone" Type="Int32" />
+          <Property Name="Bill_ID" Type="Int32" />
+          <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Rate" Type="Int32" />
+          <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="claim_datails">
+          <Key>
+            <PropertyRef Name="Claim_ID" />
+          </Key>
+          <Property Name="Claim_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Policy_ID" Type="Int32" />
+          <Property Name="Policy_Start_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Policy_End_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Place_Of_Accident" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Date_Of_Accident" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Insured_Amount" Type="Int32" />
+          <Property Name="Claimable_Amount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="company_expenses">
+          <Key>
+            <PropertyRef Name="Expence_ID" />
+          </Key>
+          <Property Name="Expence_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Type_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Amount_of_Expence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="customer_policy_records">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Phone" Type="Int32" />
+          <Property Name="Policy_ID" Type="Int32" />
+          <Property Name="Policy_Date" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Policy_duration" Type="Int32" />
+          <Property Name="Vehicle_ID" Type="Int32" />
+          <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Rate" Type="Int32" />
+          <Property Name="Vehicle_Warranty" Type="String" MaxLength="225" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Add_Prove" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="customerinfo">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Phone" Type="Int32" />
+        </EntityType>
+        <EntityType Name="estimate">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Estimate_Number" Type="Int32" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_Phone" Type="Int32" />
+          <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Rate" Type="Int32" />
+          <Property Name="Vehicle_Waranty" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Policy_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userinfo">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="userpassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vehicleinfo">
+          <Key>
+            <PropertyRef Name="Vehicle_ID" />
+          </Key>
+          <Property Name="Vehicle_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicles_Owner_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Rate" Type="Int32" />
+          <Property Name="Vehicle_Body_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Engine_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_Number" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="vimsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="billinginfoes" EntityType="Self.billinginfo" />
+          <EntitySet Name="claim_datails" EntityType="Self.claim_datails" />
+          <EntitySet Name="company_expenses" EntityType="Self.company_expenses" />
+          <EntitySet Name="customer_policy_records" EntityType="Self.customer_policy_records" />
+          <EntitySet Name="customerinfoes" EntityType="Self.customerinfo" />
+          <EntitySet Name="estimates" EntityType="Self.estimate" />
+          <EntitySet Name="userinfoes" EntityType="Self.userinfo" />
+          <EntitySet Name="vehicleinfoes" EntityType="Self.vehicleinfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vimsModelStoreContainer" CdmEntityContainer="vimsEntities">
+          <EntitySetMapping Name="billinginfoes">
+            <EntityTypeMapping TypeName="vimsModel.billinginfo">
+              <MappingFragment StoreEntitySet="billinginfo">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+                <ScalarProperty Name="Customer_Add_Prove" ColumnName="Customer_Add_Prove" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+                <ScalarProperty Name="Bill_ID" ColumnName="Bill_ID" />
+                <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+                <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+                <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+                <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+                <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="claim_datails">
+            <EntityTypeMapping TypeName="vimsModel.claim_datails">
+              <MappingFragment StoreEntitySet="claim_datails">
+                <ScalarProperty Name="Claim_ID" ColumnName="Claim_ID" />
+                <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+                <ScalarProperty Name="Policy_Start_Date" ColumnName="Policy_Start_Date" />
+                <ScalarProperty Name="Policy_End_Date" ColumnName="Policy_End_Date" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Place_Of_Accident" ColumnName="Place_Of_Accident" />
+                <ScalarProperty Name="Date_Of_Accident" ColumnName="Date_Of_Accident" />
+                <ScalarProperty Name="Insured_Amount" ColumnName="Insured_Amount" />
+                <ScalarProperty Name="Claimable_Amount" ColumnName="Claimable_Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="company_expenses">
+            <EntityTypeMapping TypeName="vimsModel.company_expenses">
+              <MappingFragment StoreEntitySet="company_expenses">
+                <ScalarProperty Name="Expence_ID" ColumnName="Expence_ID" />
+                <ScalarProperty Name="Date_of_Expence" ColumnName="Date_of_Expence" />
+                <ScalarProperty Name="Type_of_Expence" ColumnName="Type_of_Expence" />
+                <ScalarProperty Name="Amount_of_Expence" ColumnName="Amount_of_Expence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_policy_records">
+            <EntityTypeMapping TypeName="vimsModel.customer_policy_records">
+              <MappingFragment StoreEntitySet="customer_policy_records">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+                <ScalarProperty Name="Policy_ID" ColumnName="Policy_ID" />
+                <ScalarProperty Name="Policy_Date" ColumnName="Policy_Date" />
+                <ScalarProperty Name="Policy_duration" ColumnName="Policy_duration" />
+                <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+                <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+                <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+                <ScalarProperty Name="Vehicle_Version" ColumnName="Vehicle_Version" />
+                <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+                <ScalarProperty Name="Vehicle_Warranty" ColumnName="Vehicle_Warranty" />
+                <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+                <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+                <ScalarProperty Name="Customer_Add_Prove" ColumnName="Customer_Add_Prove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customerinfoes">
+            <EntityTypeMapping TypeName="vimsModel.customerinfo">
+              <MappingFragment StoreEntitySet="customerinfo">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estimates">
+            <EntityTypeMapping TypeName="vimsModel.estimate">
+              <MappingFragment StoreEntitySet="estimate">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Estimate_Number" ColumnName="Estimate_Number" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+                <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+                <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+                <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+                <ScalarProperty Name="Vehicle_Waranty" ColumnName="Vehicle_Waranty" />
+                <ScalarProperty Name="Vehicle_Policy_type" ColumnName="Vehicle_Policy_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userinfoes">
+            <EntityTypeMapping TypeName="vimsModel.userinfo">
+              <MappingFragment StoreEntitySet="userinfo">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicleinfoes">
+            <EntityTypeMapping TypeName="vimsModel.vehicleinfo">
+              <MappingFragment StoreEntitySet="vehicleinfo">
+                <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+                <ScalarProperty Name="Vehicle_Name" ColumnName="Vehicle_Name" />
+                <ScalarProperty Name="Vehicles_Owner_Address" ColumnName="Vehicles_Owner_Address" />
+                <ScalarProperty Name="Vehicle_Model" ColumnName="Vehicle_Model" />
+                <ScalarProperty Name="Vehicle_Version" ColumnName="Vehicle_Version" />
+                <ScalarProperty Name="Vehicle_Rate" ColumnName="Vehicle_Rate" />
+                <ScalarProperty Name="Vehicle_Body_Number" ColumnName="Vehicle_Body_Number" />
+                <ScalarProperty Name="Vehicle_Engine_Number" ColumnName="Vehicle_Engine_Number" />
+                <ScalarProperty Name="Vehicle_Number" ColumnName="Vehicle_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
